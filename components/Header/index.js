@@ -78,7 +78,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
                   {showResume && (
                     <Button
                       onClick={() =>
-                        window.open("mailto:hello@chetanverma.com")
+                        window.open("mailto:ted@tedward.net")
                       }
                     >
                       Resume
@@ -86,7 +86,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
                   )}
 
                   <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
+                    onClick={() => window.open("mailto:ted@tedward.net")}
                   >
                     Contact
                   </Button>
@@ -109,7 +109,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
                   )}
 
                   <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
+                    onClick={() => window.open("mailto:ted@tedward.net")}
                   >
                     Contact
                   </Button>
@@ -147,7 +147,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
               </Button>
             )}
 
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
+            <Button onClick={() => window.open("mailto:ted@tedward.net")}>
               Contact
             </Button>
             {mounted && theme && data.darkMode && (
@@ -175,8 +175,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
                 Resume
               </Button>
             )}
-
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
+            <Button onClick={() => window.open("mailto:ted@tedward.net")}>
               Contact
             </Button>
 
