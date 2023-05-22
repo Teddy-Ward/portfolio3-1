@@ -18,6 +18,7 @@ export default function Home() {
   // Ref
   const workRef = useRef();
   const aboutRef = useRef();
+  const servRef = useRef();
   const textOne = useRef();
   const textTwo = useRef();
   const textThree = useRef();
@@ -35,6 +36,14 @@ export default function Home() {
   const handleAboutScroll = () => {
     window.scrollTo({
       top: aboutRef.current.offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleServScroll = () => {
+    window.scrollTo({
+      top: servRef.current.offsetTop,
       left: 0,
       behavior: "smooth",
     });
@@ -62,6 +71,7 @@ export default function Home() {
         <Header
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
+          handleServScroll={handleServScroll}
         />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
@@ -109,7 +119,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
+        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={servRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
