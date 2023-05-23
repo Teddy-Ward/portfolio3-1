@@ -1,7 +1,7 @@
 ---
 date: '2023-05-15T11:50:54.000Z'
-title: Amazing Blog
-tagline: This is a Tagline If you want to add.
+title: Test Blog
+tagline: This is a Test to check the CSS is working
 preview: >-
   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
