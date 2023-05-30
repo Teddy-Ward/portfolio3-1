@@ -11,7 +11,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  const { name, showBlog, showResume } = data;
+  const { name, showBlog, showResume, showPrices } = data;
 
   useEffect(() => {
     setMounted(true);
@@ -75,6 +75,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
                   {showBlog && (
                     <Button onClick={() => router.push("/blog")}>Blog</Button>
                   )}
+                    {showPrices && (
+                    <Button onClick={() => router.push("/prices")}>Prices</Button>
+                  )}
                   {showResume && (
                     <Button
                       onClick={() =>
@@ -98,6 +101,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
                   </Button>
                   {showBlog && (
                     <Button onClick={() => router.push("/blog")}>Blog</Button>
+                  )}
+                  {showPrices && (
+                    <Button onClick={() => router.push("/prices")}>Prices</Button>
                   )}
                   {showResume && (
                     <Button
@@ -138,6 +144,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
             {showBlog && (
               <Button onClick={() => router.push("/blog")}>Blog</Button>
             )}
+            {showPrices && (
+                    <Button onClick={() => router.push("/prices")}>Prices</Button>
+                  )}
             {showResume && (
               <Button
                 onClick={() => router.push("/resume")}
@@ -167,6 +176,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
             {showBlog && (
               <Button onClick={() => router.push("/blog")}>Blog</Button>
             )}
+            {showPrices && (
+                    <Button onClick={() => router.push("/prices")}>Prices</Button>
+                  )}
             {showResume && (
               <Button
                 onClick={() => router.push("/resume")}

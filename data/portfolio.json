@@ -8,6 +8,7 @@
   "showBlog": true,
   "darkMode": true,
   "showResume": true,
+  "showPrices": true,
   "socials": [
     { "id": "1", "title": "Github", "link": "https://github.com/Teddy-Ward" },
     {
