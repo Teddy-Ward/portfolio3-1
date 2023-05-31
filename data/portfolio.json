@@ -86,7 +86,10 @@
       "description": "We can update your websites design and code to improve user experience, fix errors or add new features to adapt to a growing business."
     }
   ],
-  "prices": [
+  "prices": {
+    "tagline": "Tiers for all",
+    "description": "I have delivered world-class user experiences. Well-versed with React, Javascript, and most of the Web frameworks.",
+    "tiers": [
     {
       "id": "1",
       "title": "Basic Website",
@@ -129,7 +132,7 @@
       "description": "We build and optimize your online presence.  Websites are a digital entry point into your business and a powerful revenue channel.",
       "price": "1999"
     }
-  ],
+  ]},
   "aboutpara": "A newly trained MERN stack engineer, I bring a diverse skill set to the table, having previously run a successful printing business and worked in retail. My background in Architectural Technology has also equipped me with a strong foundation in CAD. As a MERN stack engineer, I have developed expertise in building dynamic, scalable web applications using MongoDB, ExpressJS, ReactJS, and NodeJS. ",
   "resume": {
     "tagline": "Full Stack Web developer ",

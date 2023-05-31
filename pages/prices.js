@@ -8,7 +8,7 @@ import Button from "../components/Button";
 import { useTheme } from "next-themes";
 // Data
 import { name, showPrices } from "../data/portfolio.json";
-import { resume } from "../data/portfolio.json";
+import { prices } from "../data/portfolio.json";
 import data from "../data/portfolio.json";
 
 const Prices = () => {
@@ -43,14 +43,15 @@ const Prices = () => {
             <div
               className={`w-full ${
                 mount && theme.theme === "dark" ? "bg-slate-800" : "bg-gray-50"
-              } max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm`}
+              } max-w-4xl p-10 mob:p-5 desktop:p-10 rounded-lg shadow-sm`}
             >
-              {/* <h1 className="text-3xl font-bold">{name}</h1>
-              <h2 className="text-xl mt-5">{resume.tagline}</h2>
-              <h2 className="w-4/5 text-xl mt-5 opacity-50">
-                {resume.description}
+              <h1 className="text-3xl font-bold">Price List</h1>
+              <h2 className="text-xl mt-5">{prices.tagline}</h2>
+              <h2 className="w-full text-xl mt-5 opacity-50">
+                {prices.description}
               </h2>
-              <div className="mt-2">
+            </div>
+            {/* <div className="mt-2">
                 <Socials />
               </div>
               <div className="mt-5">
@@ -122,8 +123,7 @@ const Prices = () => {
                     </div>
                   )}
                 </div>
-              </div> */}
-            </div>
+              */}
           </div>
         )}
       </div>
