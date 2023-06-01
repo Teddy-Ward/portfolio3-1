@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Cursor from "../components/Cursor";
 import Header from "../components/Header";
-import ProjectResume from "../components/ProjectResume";
+import TierPrices from "../components/TierPrices";
 import Socials from "../components/Socials";
 import Button from "../components/Button";
 import { useTheme } from "next-themes";
@@ -51,6 +51,21 @@ const Prices = () => {
                 {prices.description}
               </h2>
             </div>
+            <div className="mt-5">
+                <h1 className="text-2xl font-bold">Tiers</h1>
+
+                {prices.tiers.map(
+                  ({ id, title, bullets, description, price }) => (
+                    <TierPrices
+                      key={id}
+                      title={title}
+                      bullets={bullets}
+                      description={description}
+                      price={price}
+                    ></TierPrices>
+                  )
+                )}
+              </div>
             {/* <div className="mt-2">
                 <Socials />
               </div>
