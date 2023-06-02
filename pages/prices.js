@@ -51,7 +51,7 @@ const Prices = () => {
                 {prices.description}
               </h2>
             </div>
-            <div className="mt-5">
+            <div className="mt-5 w-full flex flex-col">
                 <h1 className="text-2xl font-bold">Tiers</h1>
 
                 {prices.tiers.map(

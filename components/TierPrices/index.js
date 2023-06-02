@@ -4,7 +4,7 @@ const TierPrices = ({ title, bullets, description, price }) => {
   const [bulletsLocal, setBulletsLocal] = React.useState(bullets.split(","));
 
   return (
-    <div className="mt-5 w-full flex mob:flex-col desktop:flex-col justify-between">
+    <div className="mt-5 w-2/5 flex mob:flex-col desktop:flex-col justify-between">
       <div className="text-lg w-2/5">
         <h2>{title}</h2>
         <h3 className="text-sm opacity-50">{description}</h3>
