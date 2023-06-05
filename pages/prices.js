@@ -51,9 +51,9 @@ const Prices = () => {
                 {prices.description}
               </h2>
             </div>
-            <div className="mt-5 w-full flex flex-col">
+            <div className="mt-5 w-full flex flex-col items-center">
                 <h1 className="text-2xl font-bold">Tiers</h1>
-
+                <div className="grid grid-cols-2 gap-5 mt-5">
                 {prices.tiers.map(
                   ({ id, title, bullets, description, price }) => (
                     <TierPrices
@@ -65,6 +65,7 @@ const Prices = () => {
                     ></TierPrices>
                   )
                 )}
+                </div>
               </div>
             {/* <div className="mt-2">
                 <Socials />
