@@ -28,6 +28,38 @@ const Edit = () => {
     }
   };
 
+    // Prices Handler
+    const editPrices = (pricesIndex, editPrices) => {
+        let copyPrices = data.prices;
+        copyPrices[pricesIndex] = { ...editPrices };
+        setData({ ...data, prices: copyPrices });
+      };
+    
+      const addPrices = () => {
+        setData({
+          ...data,
+          price: [
+            ...data.price,
+            {
+              id: uuidv4(),
+              title: "New Project",
+              description: "Web Design & Development",
+              imageSrc:
+                "https://images.unsplash.com/photo-1528290869615-84fe45af6918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80",
+    
+              url: "http://tedward.net/",
+            },
+          ],
+        });
+      };
+    
+      const deletePrices = (id) => {
+        const copyPrice = data.price;
+        copyPrice = copyPrice.filter((price) => price.id !== id);
+        setData({ ...data, price: copyPrice });
+      };
+
+
   // Project Handler
   const editProjects = (projectIndex, editProject) => {
     let copyProjects = data.projects;
@@ -127,10 +159,10 @@ const Edit = () => {
           ...data.resume.experiences,
           {
             id: uuidv4(),
-            dates: "Enter Dates",
-            type: "Full Time",
-            position: "Frontend Engineer at X",
+            title: "Enter Title",
+            description: "Enter a breif description",
             bullets: ["Worked on the frontend of a React application"],
+            price: "99.99",
           },
         ],
       },
@@ -185,6 +217,12 @@ const Edit = () => {
               type={currentTabs === "ABOUT" && "primary"}
             >
               About
+            </Button>
+            <Button
+              onClick={() => setCurrentTabs("PRICES")}
+              type={currentTabs === "PRICES" && "primary"}
+            >
+              Prices
             </Button>
             <Button
               onClick={() => setCurrentTabs("SOCIAL")}
@@ -341,6 +379,94 @@ const Edit = () => {
               </div>
             </div>
           </div>
+        )}
+                {/* PRICES */}
+                {currentTabs === "PRICES" && (
+          <>
+            <div className="mt-10">
+              {data.projects.map((project, index) => (
+                <div className="mt-10" key={project.id}>
+                  <div className="flex items-center justify-between">
+                    <h1 className="text-2xl">{project.title}</h1>
+                    <Button
+                      onClick={() => deleteProject(project.id)}
+                      type="primary"
+                    >
+                      Delete
+                    </Button>
+                  </div>
+
+                  <div className="flex items-center mt-5">
+                    <label className="w-1/5 text-lg opacity-50">Title</label>
+                    <input
+                      value={project.title}
+                      onChange={(e) =>
+                        editProjects(index, {
+                          ...project,
+                          title: e.target.value,
+                        })
+                      }
+                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      type="text"
+                    ></input>
+                  </div>
+                  <div className="flex items-center mt-2">
+                    <label className="w-1/5 text-lg opacity-50">
+                      Description
+                    </label>
+                    <input
+                      value={project.description}
+                      onChange={(e) =>
+                        editProjects(index, {
+                          ...project,
+                          description: e.target.value,
+                        })
+                      }
+                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      type="text"
+                    ></input>
+                  </div>
+                  <div className="flex items-center mt-2">
+                    <label className="w-1/5 text-lg opacity-50">
+                      Image Source
+                    </label>
+                    <input
+                      value={project.imageSrc}
+                      onChange={(e) =>
+                        editProjects(index, {
+                          ...project,
+                          imageSrc: e.target.value,
+                        })
+                      }
+                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      type="text"
+                    ></input>
+                  </div>
+                  <div className="flex items-center mt-2">
+                    <label className="w-1/5 text-lg opacity-50">url</label>
+                    <input
+                      value={project.url}
+                      onChange={(e) =>
+                        editProjects(index, {
+                          ...project,
+                          url: e.target.value,
+                        })
+                      }
+                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      type="text"
+                    ></input>
+                  </div>
+                  <hr className="my-10"></hr>
+                </div>
+              ))}
+            </div>
+
+            <div className="my-10">
+              <Button onClick={addProject} type="primary">
+                Add Project +
+              </Button>
+            </div>
+          </>
         )}
         {/* PROJECTS */}
         {currentTabs === "PROJECTS" && (

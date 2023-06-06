@@ -6,6 +6,7 @@ import TierPrices from "../components/TierPrices";
 import Socials from "../components/Socials";
 import Button from "../components/Button";
 import { useTheme } from "next-themes";
+import Head from "next/head";
 // Data
 import { name, showPrices } from "../data/portfolio.json";
 import { prices } from "../data/portfolio.json";
@@ -24,6 +25,9 @@ const Prices = () => {
   }, []);
   return (
     <>
+          <Head>
+        <title>{data.name} - Prices</title>
+      </Head>
       {process.env.NODE_ENV === "development" && (
         <div className="fixed bottom-6 right-6">
           <Button onClick={() => router.push("/edit")} type={"primary"}>
@@ -40,21 +44,10 @@ const Prices = () => {
         <Header isBlog />
         {mount && (
           <div className="mt-10 w-full flex flex-col items-center">
-            <div
-              className={`w-full ${
-                mount && theme.theme === "dark" ? "bg-slate-800" : "bg-gray-50"
-              } max-w-4xl p-10 mob:p-5 desktop:p-10 rounded-lg shadow-sm`}
-            >
-              <h1 className="text-3xl font-bold">Price List</h1>
-              <h2 className="text-xl mt-5">{prices.tagline}</h2>
-              <h2 className="w-full text-xl mt-5 opacity-50">
-                {prices.description}
-              </h2>
-            </div>
+
             <div className="mt-5 w-full flex flex-col items-center">
-                <h1 className="text-2xl font-bold">Tiers</h1>
-                <div className="grid grid-cols-2 gap-5 mt-5">
-                {prices.tiers.map(
+                <div className="grid desktop:grid-cols-2 gap-5 mt-5 desktop:max-w-[75%] mob:max-w-[50%]">
+                {prices.map(
                   ({ id, title, bullets, description, price }) => (
                     <TierPrices
                       key={id}
