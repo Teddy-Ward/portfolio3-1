@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Cursor from "../components/Cursor";
 import Header from "../components/Header";
+import Head from "next/head";
 import ProjectResume from "../components/ProjectResume";
 import Socials from "../components/Socials";
 import Button from "../components/Button";
@@ -24,6 +25,9 @@ const Resume = () => {
   }, []);
   return (
     <>
+              <Head>
+        <title>{data.name} - Resume</title>
+      </Head>
       {process.env.NODE_ENV === "development" && (
         <div className="fixed bottom-6 right-6">
           <Button onClick={() => router.push("/edit")} type={"primary"}>
