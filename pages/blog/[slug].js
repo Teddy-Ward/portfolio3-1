@@ -29,7 +29,6 @@ const BlogPost = ({ post }) => {
         <meta name="description" content={post.preview} />
       </Head>
       {data.showCursor && <Cursor />}
-
       <div
         className={`container mx-auto mt-10 ${
           data.showCursor && "cursor-none"

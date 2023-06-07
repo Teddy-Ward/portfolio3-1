@@ -28,37 +28,34 @@ const Edit = () => {
     }
   };
 
-    // Prices Handler
-    const editPrices = (pricesIndex, editPrices) => {
-        let copyPrices = data.prices;
-        copyPrices[pricesIndex] = { ...editPrices };
-        setData({ ...data, prices: copyPrices });
-      };
-    
-      const addPrices = () => {
-        setData({
-          ...data,
-          price: [
-            ...data.price,
-            {
-              id: uuidv4(),
-              title: "New Project",
-              description: "Web Design & Development",
-              imageSrc:
-                "https://images.unsplash.com/photo-1528290869615-84fe45af6918?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80",
-    
-              url: "http://tedward.net/",
-            },
-          ],
-        });
-      };
-    
-      const deletePrices = (id) => {
-        const copyPrice = data.price;
-        copyPrice = copyPrice.filter((price) => price.id !== id);
-        setData({ ...data, price: copyPrice });
-      };
+  // Prices Handler
+  const editPrices = (pricesIndex, editPrices) => {
+    let copyPrices = data.prices;
+    copyPrices[pricesIndex] = { ...editPrices };
+    setData({ ...data, prices: copyPrices });
+  };
 
+  const addPrices = () => {
+    setData({
+      ...data,
+      price: [
+        ...data.price,
+        {
+          id: uuidv4(),
+          title: "New Tier",
+          description: "Web Design & Development",
+          bullets:"Website Design, Free Domain & Hosting",
+          url: "99.99",
+        },
+      ],
+    });
+  };
+
+  const deletePrices = (id) => {
+    const copyPrice = data.price;
+    copyPrice = copyPrice.filter((price) => price.id !== id);
+    setData({ ...data, price: copyPrice });
+  };
 
   // Project Handler
   const editProjects = (projectIndex, editProject) => {
@@ -380,16 +377,16 @@ const Edit = () => {
             </div>
           </div>
         )}
-                {/* PRICES */}
-                {currentTabs === "PRICES" && (
+        {/* PRICES */}
+        {currentTabs === "PRICES" && (
           <>
             <div className="mt-10">
-              {data.projects.map((project, index) => (
-                <div className="mt-10" key={project.id}>
+              {data.prices.map((prices, index) => (
+                <div className="mt-10" key={prices.id}>
                   <div className="flex items-center justify-between">
-                    <h1 className="text-2xl">{project.title}</h1>
+                    <h1 className="text-2xl">{prices.title}</h1>
                     <Button
-                      onClick={() => deleteProject(project.id)}
+                      onClick={() => deletePrices(prices.id)}
                       type="primary"
                     >
                       Delete
@@ -399,10 +396,10 @@ const Edit = () => {
                   <div className="flex items-center mt-5">
                     <label className="w-1/5 text-lg opacity-50">Title</label>
                     <input
-                      value={project.title}
+                      value={prices.title}
                       onChange={(e) =>
-                        editProjects(index, {
-                          ...project,
+                        editPrices(index, {
+                          ...prices,
                           title: e.target.value,
                         })
                       }
@@ -415,10 +412,10 @@ const Edit = () => {
                       Description
                     </label>
                     <input
-                      value={project.description}
+                      value={prices.description}
                       onChange={(e) =>
-                        editProjects(index, {
-                          ...project,
+                        editPrices(index, {
+                          ...prices,
                           description: e.target.value,
                         })
                       }
@@ -428,14 +425,14 @@ const Edit = () => {
                   </div>
                   <div className="flex items-center mt-2">
                     <label className="w-1/5 text-lg opacity-50">
-                      Image Source
+                      Bullets
                     </label>
                     <input
-                      value={project.imageSrc}
+                      value={prices.bullets}
                       onChange={(e) =>
-                        editProjects(index, {
-                          ...project,
-                          imageSrc: e.target.value,
+                        editPrices(index, {
+                          ...prices,
+                          bullets: e.target.value,
                         })
                       }
                       className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
@@ -443,13 +440,13 @@ const Edit = () => {
                     ></input>
                   </div>
                   <div className="flex items-center mt-2">
-                    <label className="w-1/5 text-lg opacity-50">url</label>
+                    <label className="w-1/5 text-lg opacity-50">Price</label>
                     <input
-                      value={project.url}
+                      value={prices.price}
                       onChange={(e) =>
-                        editProjects(index, {
-                          ...project,
-                          url: e.target.value,
+                        editPrices(index, {
+                          ...prices,
+                          prices: e.target.value,
                         })
                       }
                       className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
@@ -462,8 +459,8 @@ const Edit = () => {
             </div>
 
             <div className="my-10">
-              <Button onClick={addProject} type="primary">
-                Add Project +
+              <Button onClick={addPrices} type="primary">
+                Add Price Tier +
               </Button>
             </div>
           </>

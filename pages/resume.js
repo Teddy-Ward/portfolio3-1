@@ -25,7 +25,7 @@ const Resume = () => {
   }, []);
   return (
     <>
-              <Head>
+      <Head>
         <title>{data.name} - Resume</title>
       </Head>
       {process.env.NODE_ENV === "development" && (

@@ -19,6 +19,8 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleServScroll, isBlog 
 
   return (
     <>
+          <div className="gradient-circle"></div>
+
       <Popover className="block tablet:hidden mt-5">
         {({ open }) => (
           <>
