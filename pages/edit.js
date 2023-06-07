@@ -338,6 +338,25 @@ const Edit = () => {
               </div>
             </div>
             <div className="mt-5 flex items-center">
+              <label className="w-1/5 text-lg opacity-50">Show Prices</label>
+              <div className="w-4/5 ml-10 flex items-center">
+                <Button
+                  onClick={() => setData({ ...data, showPrices: true })}
+                  type={data.showPrices && "primary"}
+                >
+                  Yes
+                </Button>
+                <Button
+                  onClick={() => setData({ ...data, showPrices: false })}
+                  classes={
+                    !data.showPrices && "bg-red-500 text-white hover:bg-red-600"
+                  }
+                >
+                  No
+                </Button>
+              </div>
+            </div>
+            <div className="mt-5 flex items-center">
               <label className="w-1/5 text-lg opacity-50">Show Resume</label>
               <div className="w-4/5 ml-10 flex items-center">
                 <Button
