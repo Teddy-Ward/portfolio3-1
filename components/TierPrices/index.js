@@ -14,7 +14,7 @@ useEffect(() => {
     <div className={`${
         mount && theme.theme === "dark" ? "bg-slate-800" : "bg-gray-50"
       } mt-0 w-full p-3 flex mob:flex-col desktop:flex-col justify-between rounded-lg shadow-sm`}>
-      <div className="text-lg w-full">
+      <div className="text-lg w-11/12">
         <h2>{title}</h2>
         <h3 className="text-sm opacity-50 h-12 mt-1">{description}</h3>
       </div>

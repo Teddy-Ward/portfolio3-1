@@ -47,8 +47,11 @@ const Prices = () => {
             <h1 className="mx-auto mob:p-2 text-bold text-6xl laptop:text-8xl w-full">
               Prices.
             </h1>
-            <div className="mt-5 w-full flex flex-col items-center">
-              <div className="grid grid-cols-1 tablet:grid-cols-2 gap-5 mt-5 desktop:max-w-[75%] mob:max-w-[100%] cursor-default">
+            <h2 className="text-lg opacity-50 h-12 mt-5">
+                All products include the first year of domain, hosting and support.
+            </h2>
+            <div className="w-full flex flex-col items-center">
+              <div className="grid grid-cols-1 tablet:grid-cols-2 gap-5 mt-1 desktop:max-w-[75%] mob:max-w-[100%] cursor-default">
                 {prices.map(({ id, title, bullets, description, price }) => (
                   <TierPrices
                     key={id}
@@ -60,9 +63,12 @@ const Prices = () => {
                 ))}
               </div>
             </div>
+            <h2 className="text-lg opacity-50 h-12 mt-5">
+                *Price to be used as a baseline which may go up or down depending on the requirements.
+            </h2>
           </div>
         )}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

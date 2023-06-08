@@ -465,7 +465,7 @@ const Edit = () => {
                       onChange={(e) =>
                         editPrices(index, {
                           ...prices,
-                          prices: e.target.value,
+                          price: e.target.value,
                         })
                       }
                       className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
